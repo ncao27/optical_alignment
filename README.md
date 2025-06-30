@@ -1,4 +1,4 @@
-A series of python scripts to perform analysis on the imaging plane of a Quadoa ray-tracing simulation.
+A series of python scripts to perform analysis on the imaging plane of a Quadoa ray-tracing simulation. Note to reader: Quadoa can be acquired through proof of enrollment at an educational institution. 
 
 1. intensity_data
   The file named intensity_data contains the contents generated through forward simulations. two_deg contains simulation results generated through simulations involving two degrees of freedom (yaw1 and yaw2). four_deg contains simulation results generated through simulations involving four degrees of freedom (yaw1, yaw2, pitch1, pitch2).
