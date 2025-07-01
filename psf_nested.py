@@ -15,7 +15,7 @@ QuadoaBaseFolder = "E:/Program Files/Quadoa"
 core.loadMaterialFile("E:/Program Files/Quadoa/glass/CDGM.glas")
 
 # load the lens file
-ModelFolder = "C:/Users/Nathan Cao/OneDrive/Desktop/quadoa projects"
+ModelFolder = "C:/Users/Nathan Cao/OneDrive/Desktop/quadoa_projects"
 core.loadModelFile(ModelFolder + "/beam_walking.optx")
 
 core.applyChangesAndInitModel()

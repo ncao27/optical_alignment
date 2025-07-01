@@ -21,7 +21,7 @@ fig, axs = plt.subplots(max_wave, max_field, squeeze=False)
 
 # Set the necessary parameter values
 yaw1_start = 43; yaw1_end = 47; yaw2_start = 133; yaw2_end = 137
-pitch1_start = -2; pitch1_end = 2; pitch2_start = -2; pitch2_end = 2; step_size = 1
+pitch1_start = -2; pitch1_end = 2; pitch2_start = -2; pitch2_end = 2; step_size = 0.05
 
 # Generate the values that we are going to use
 yaw1s = np.arange(yaw1_start, yaw1_end, step_size)
@@ -68,7 +68,7 @@ Results = Parallel(n_jobs=-1, verbose=100)(
 )
 
 # Define the parameters for how we want to set the filename and filepath
-simulation_num = 2
+simulation_num = 3
 filename = "geometric_fourdeg_" + str(simulation_num) + ".csv"
 filepath = "C://Users//Nathan Cao//OneDrive//Desktop//quadoa_projects//intensity_data//four_deg//"
 cleaned_results = [tuple(row) if hasattr(row, '__iter__') and not isinstance(row, str) else (row,) for row in Results]

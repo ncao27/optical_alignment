@@ -2,7 +2,7 @@
 <gui_settings>
 	<plots />
 	<reports />
-	<mainwindow_windowstate value="AAAA/wAAAAD9AAAAAgAAAAAAAAYhAAAEuPwCAAAAAfsAAAAcAE8AcAB0AGkAYwBhAGwAIABEAGUAcwBpAGcAbgEAAACKAAAEuAAAAHoA////AAAAAQAAATwAAAS4/AIAAAAD+wAAABgAUwB5AHMAdABlAG0AIABTAGUAdAB1AHABAAAAigAAAU4AAAB6AP////sAAAAgAFMAbABpAGQAZQByACAASQBuAHQAZQByAGYAYQBjAGUBAAAB3AAAAU8AAAB6AP////sAAAAkAE0AdQBsAHQAaQBjAG8AbgBmAGkAZwAgAEwAbwBvAGsAdQBwAQAAAy8AAAITAAAAegD///8AAAKbAAAEuAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAGgByAGkAYgBiAG8AbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=" />
+	<mainwindow_windowstate value="AAAA/wAAAAD9AAAAAgAAAAAAAAQFAAAEuPwCAAAAAfsAAAAcAE8AcAB0AGkAYwBhAGwAIABEAGUAcwBpAGcAbgEAAACKAAAEuAAAAHoA////AAAAAQAAA5kAAAS4/AIAAAAD+wAAABgAUwB5AHMAdABlAG0AIABTAGUAdAB1AHABAAAAigAAAuUAAAB6AP////sAAAAgAFMAbABpAGQAZQByACAASQBuAHQAZQByAGYAYQBjAGUBAAADcwAAAHoAAAB6AP////sAAAAkAE0AdQBsAHQAaQBjAG8AbgBmAGkAZwAgAEwAbwBvAGsAdQBwAQAAA/EAAAFRAAAAegD///8AAAJaAAAEuAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAGgByAGkAYgBiAG8AbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=" />
 	<cutaway_mod value="0" />
 	<cutaway_val value="499" />
 	<delete_vig value="false" />
@@ -17,21 +17,21 @@
 	<ray_style_normal value="false" />
 	<ray_style_arrow value="false" />
 	<ray_style_scale value="5" />
-	<v3d_x value="-97.562143372378955" />
-	<v3d_y value="5.2207339884245814" />
-	<v3d_z value="-111.1534524301097" />
-	<v3d_zoom value="10.717944050000005" />
-	<v3d_r00 value="0.504731297" />
-	<v3d_r01 value="-0.278908402" />
-	<v3d_r02 value="-0.816968262" />
+	<v3d_x value="-96.659527455793565" />
+	<v3d_y value="6.6900867213236364" />
+	<v3d_z value="-111.48559299525483" />
+	<v3d_zoom value="12.968712300500009" />
+	<v3d_r00 value="0.619206488" />
+	<v3d_r01 value="-0.26300475" />
+	<v3d_r02 value="-0.739860177" />
 	<v3d_r03 value="0" />
-	<v3d_r10 value="-0.367727757" />
-	<v3d_r11 value="-0.925671875" />
-	<v3d_r12 value="0.0888331607" />
+	<v3d_r10 value="-0.361774117" />
+	<v3d_r11 value="-0.931821227" />
+	<v3d_r12 value="0.0284654275" />
 	<v3d_r13 value="0" />
-	<v3d_r20 value="-0.781027555" />
-	<v3d_r21 value="0.255589783" />
-	<v3d_r22 value="-0.569778502" />
+	<v3d_r20 value="-0.696910441" />
+	<v3d_r21 value="0.250041187" />
+	<v3d_r22 value="-0.672140241" />
 	<v3d_r23 value="0" />
 	<v3d_r30 value="0" />
 	<v3d_r31 value="0" />
