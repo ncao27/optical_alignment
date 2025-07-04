@@ -74,7 +74,7 @@ while yaw1 < yaw1_end:
                 core.setOpticalSystemParamByIndexD(9, 11, pitch2)
 
                 # getGeoPSF, as opposed to get FFT
-                data = core.getGeoPSF(0, 0, 0, 100)
+                data = core.getGeoPSF(0, 0, 0, 50)
 
                 # this is just the numpy array version of the PSF
                 npdata = np.array(data, copy=False)
@@ -87,7 +87,7 @@ while yaw1 < yaw1_end:
 
                 index4 += 1
                 pitch2 += step_size
-                print("Pitch2: " + str(pitch2) + " Pitch1: " + str(pitch1) + " Yaw2: " + str(yaw2) + " Yaw1: " + str(yaw1))
+                print("Pitch2: " + str(pitch2) + " Pitch1: " + str(pitch1) + " Yaw2: " + str(yaw2) + " Yaw1: " + str(yaw1) + " Power: " + str(nppower) + "\n time: " + str(time.ctime()))
             index3 += 1
             pitch1 += step_size
             index4 = 0
@@ -99,8 +99,6 @@ while yaw1 < yaw1_end:
     index1 += 1
     yaw1 += step_size
     index2 = 0
-
-    print(str(yaw1))
 
 # normalize the intensity values because too big
 intensities_normalized = intensities / np.max(intensities)

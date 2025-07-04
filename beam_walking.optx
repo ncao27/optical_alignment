@@ -88,7 +88,7 @@
 		<surf id="SURFACE 1" comment="aperture 1" refe="abs" off_axis="true" order="zyx" posrot="pos" rot_c_x="0.0" rot_c_y="0.0" rot_c_z="0.0" is_visible="true" store_hidden="false" puuid="surf6" suid="surf_uid6" ghost="true">
 			<variable name="radius" value="inf" is_active="0" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
 			<variable name="z" value="50.0" is_active="0" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
-			<float_ap name="radius" value="2.10794965092909" is_locked="false" />
+			<float_ap name="radius" value="2.09707682289746" is_locked="false" />
 			<variable name="x" value="0.0" is_active="0" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
 			<variable name="y" value="20.0" is_active="1" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
 			<variable name="rx" value="0.0" is_active="0" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
@@ -148,8 +148,8 @@
 		<sequence aperturetype="obs_na" fieldtype="obj_height" stopsurface="2" opd_ref="exit" opd_chiefref="primary" img_space_type="focal" no_virt="false" is_visible="true" store_hidden="false" sequid="seq_uid1" is_ghost="false">
 			<source sourcetype="point" ap_scale_x="1.0" is_visible="true" store_hidden="false">
 				<variable name="aperture_val" value="0.1" is_active="0" min="-inf" max="inf" bound_type="2" bound_weight="1.0" bound_tolerance="1e-08" var_id="" />
-				<dist disttype="line_xy" rays="10" rays_2="10" footprinttype="plane" is_visible="true" store_hidden="false" ext_disttype="disk" sigma="0.0" ext_dir_disttype="lambert" extend_param1="0.0" extend_param2="0.0" extend_param3="0.0" extend_param4="0.0" extend_param5="0.0" extend_param6="0.0" px="0.0" py="0.0" disttype_gauss="gaussian_beam" waist="0.1" m_square="1.0" waist_dz="0.0" waist_x="0.1" m_square_x="1.0" waist_dz_x="0.0" use_paraxial="false" />
-				<apod apod_type="const" power="1.0" normed="true" sigma="0.5" pow="1.0" sigma2="0.5" pow2="1.0" is_visible="true" store_hidden="false" />
+				<dist disttype="random_equal" rays="50" rays_2="1000" footprinttype="plane" is_visible="true" store_hidden="false" ext_disttype="disk" sigma="0.0" ext_dir_disttype="lambert" extend_param1="0.0" extend_param2="0.0" extend_param3="0.0" extend_param4="0.0" extend_param5="0.0" extend_param6="0.0" px="0.0" py="0.0" disttype_gauss="gaussian_beam" waist="0.1" m_square="1.0" waist_dz="0.0" waist_x="0.1" m_square_x="1.0" waist_dz_x="0.0" use_paraxial="false" />
+				<apod apod_type="const" power="1.0" normed="false" sigma="0.5" pow="1.0" sigma2="0.5" pow2="1.0" is_visible="true" store_hidden="false" />
 				<pol pol_type="none" pol_ref="ideal" ang="0.0" is_visible="true" store_hidden="false" rot_dir="l" ex="1.0" ecx="0.0" ey="0.0" ecy="0.0" ax="1.0" px="0.0" ay="0.0" py="0.0" s_i="1.0" s_q="1.0" s_u="0.0" s_v="0.0" />
 				<wavelengths prim="1" wave_ref="medium" is_visible="true" store_hidden="false">
 					<wavelength val="550.0" wght="1.0" is_visible="true" store_hidden="false" />
@@ -204,6 +204,10 @@
 		<assembly is_visible="true" store_hidden="false" specific="false" />
 		<multiconf is_visible="true" store_hidden="false" />
 		<comp_container is_visible="true" store_hidden="false" />
+		<assembly is_visible="true" store_hidden="false" specific="true">
+			<pos_tol dist="equal" dist_p0="0.0" dist_p1="0.0" dist_p2="0.0" axis="xyz" is_visible="true" store_hidden="false" />
+			<angle_tol dist="equal" dist_p0="0.0" dist_p1="0.0" dist_p2="0.0" axis="xy" unit="deg" is_visible="true" store_hidden="false" />
+		</assembly>
 	</tolerancing>
-	<crypt value="355f50cea2a285fcfa90634263c780a56865c1fddad98a5bf7f1b8bfa4889f99" />
+	<crypt value="6af6d2b9f055b915c52c8496635e9d748f9051af8941913dce83e1a79e7440d5" />
 </optical_system_definition>

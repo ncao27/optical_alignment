@@ -7,6 +7,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from joblib import Parallel, delayed
 import csv
+import os
 
 '''
 # Get info about the sequence: the sequence number, the number of fields, wavelengths, etc.
@@ -21,7 +22,7 @@ fig, axs = plt.subplots(max_wave, max_field, squeeze=False)
 
 # Set the necessary parameter values
 yaw1_start = 43; yaw1_end = 47; yaw2_start = 133; yaw2_end = 137
-pitch1_start = -2; pitch1_end = 2; pitch2_start = -2; pitch2_end = 2; step_size = 0.05
+pitch1_start = -2; pitch1_end = 2; pitch2_start = -2; pitch2_end = 2; step_size = 0.1
 
 # Generate the values that we are going to use
 yaw1s = np.arange(yaw1_start, yaw1_end, step_size)
@@ -51,7 +52,7 @@ def run_simulation(yaw1, yaw2, pitch1, pitch2):
     core.setOpticalSystemParamByIndexD(9, 11, pitch2)
 
     # getGeoPSF, as opposed to get FFT
-    data = core.getGeoPSF(0, 0, 0, 100)
+    data = core.getGeoPSF(0, 0, 0, 17)
 
     # this is just the numpy array version of the PSF
     npdata = np.array(data, copy=False)
@@ -62,19 +63,28 @@ def run_simulation(yaw1, yaw2, pitch1, pitch2):
     return yaw1, yaw2, pitch1, pitch2, nppower
 
 # Do the parallel computation of the simulations
-Results = Parallel(n_jobs=-1, verbose=100)(
-    delayed(run_simulation)(i, j, k, l)
-    for i in yaw1s for j in yaw2s for k in pitch1s for l in pitch2s
-)
 
-# Define the parameters for how we want to set the filename and filepath
-simulation_num = 3
-filename = "geometric_fourdeg_" + str(simulation_num) + ".csv"
-filepath = "C://Users//Nathan Cao//OneDrive//Desktop//quadoa_projects//intensity_data//four_deg//"
-cleaned_results = [tuple(row) if hasattr(row, '__iter__') and not isinstance(row, str) else (row,) for row in Results]
+yaw1s_split = np.array_split(yaw1s, 10)
+print(yaw1s_split)
 
-# Generate the actual csv file
-with open(filepath + filename, 'w', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerow(['yaw1', 'yaw2', 'pitch1', 'pitch2', 'intensity'])  # header
-    writer.writerows(cleaned_results)
+file_num = 1
+
+for arr in yaw1s_split:
+
+    Results = Parallel(n_jobs = 40, verbose = 100)(
+        delayed(run_simulation)(i, j, k, l)
+        for i in arr for j in yaw2s for k in pitch1s for l in pitch2s
+    )
+
+    # Define the parameters for how we want to set the filename and filepath
+    filename = "//geometric_fourdeg_" + str(file_num) + ".csv"
+    filepath = "C://Users//Nathan Cao//OneDrive//Desktop//quadoa_projects//intensity_data//four_deg//experiment_one"
+    cleaned_results = [tuple(row) if hasattr(row, '__iter__') and not isinstance(row, str) else (row,) for row in Results]
+
+    # Generate the actual csv file
+    with open(filepath + filename, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['yaw1', 'yaw2', 'pitch1', 'pitch2', 'intensity'])  # header
+        writer.writerows(cleaned_results)
+
+    file_num += 1
