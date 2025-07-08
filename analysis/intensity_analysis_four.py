@@ -109,7 +109,7 @@ if dimension == "3d":
         index += 1
 
     #key: varying means that i adjust the value in every for loop interation, fixed means im fixing a value, not indexed means i use every value
-    filepath = "C://Users//Nathan Cao//OneDrive//Desktop//quadoa_projects//intensity_data//four_deg//experiment_1//plots//"
+    filepath = "/intensity_data/four_deg/experiment_1/plots//"
     filename = "yaw1-not indexed, yaw2-not indexed, pitch1-not indexed pitch2-varying" + ".png"
     plt.savefig(filepath + filename)
 
