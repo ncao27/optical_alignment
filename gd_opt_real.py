@@ -8,8 +8,15 @@ motor_interface = "C://Users//Nathan Cao//OneDrive//Desktop//motor_interface//hy
 
 def set_adjust(direction, frequency, steps, axes):
     """
+    Function:
+        Calls the hyperterminal.py file and rotates the motor by a specified amount
     Params:
-        1. 
+        1. direction: the direction (CW or CCW) that we want the axis of the motor to turn
+        2. frequency: the rate at which we want the axis of the motor to turn
+        3. steps: the number of pulses
+        4. axes: specifically which axes we are going to rotate
+    Returns:
+        Nothing
     """
     for axis in axes:
         inputs = [
@@ -28,6 +35,15 @@ def set_adjust(direction, frequency, steps, axes):
             capture_output=True
         )
 def random_params():
+    """
+    Function:
+        Generates some random parameter values for the piezoelectric motor
+    Params:
+        Nothing
+    Returns:
+        direction: the direction that the piezoelectric motor will turn
+        steps: the number of pulses
+    """
     options = ["NR", "RR"]
     direction = random.choice(options)
     steps = np.random.randint(2000, 5000)
@@ -36,7 +52,13 @@ def random_params():
 
 def optimize_power(iters, target_power):
     """
-    Policy: if after iters number of iterations we do not get target_power then we exit out, target_power should be above 0.5mW
+    Function:
+        Optimize the position of the mirrors to maximize the power output detected by the power meter at the end of the setup
+    Params:
+        iters: the number of iterations we will run our program for before terminating 
+        target_power: a lower bound for the minimal amount of power we need to detect before determining that we have reached a global maximum
+    Returns:
+        counter: the number of iterations we ran our program for
     """
     # if it is less than 100 micro watts, then it must be the case that the power meter is directed towards nothing, we must do a random restart
 
