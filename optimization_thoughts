@@ -1,0 +1,27 @@
+Note to self: it might be smarter if at a current state we can look at all possible states around, but that is not
+gradient based optimization anymore; ALSO in the file gd_opt_real, it's not even real finite difference approximation
+optimization because i dont use the gradient
+method start: optimize_power
+
+    power_state = {
+        power: {yaw1 direction, steps}, {yaw2 direction, steps}, {pitch1 direction, steps}, {pitch2 direction, steps}
+    }
+
+    take the current reading and record, obviously direction and steps would be nonexistent for the current one
+
+
+    if we have more than one reading (we can keep the rotational frequency the same to simplify things
+
+        gradient = (current_power - previous_power) / number of steps we took
+
+        if the current_power - past_power is negative, we multiply that value by some min step size; if (current_power-
+        past_power) * min_steps is greater than some threshold value, then we just set it to that value
+
+        if the current_power
+        grad_yaw1
+        grad_yaw2
+        grad_pitch1
+        grad_pitch2
+
+    if we have less than or equal to one reading
+        there probably is some optimal way to take the next reading?

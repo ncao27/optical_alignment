@@ -55,7 +55,7 @@ def optimize_power(iters, target_power):
     Function:
         Optimize the position of the mirrors to maximize the power output detected by the power meter at the end of the setup
     Params:
-        iters: the number of iterations we will run our program for before terminating 
+        iters: the number of iterations we will run our program for before terminating
         target_power: a lower bound for the minimal amount of power we need to detect before determining that we have reached a global maximum
     Returns:
         counter: the number of iterations we ran our program for
@@ -155,8 +155,10 @@ optimize_power(2000, 0.7)
 
 
 
-
-
+# if the value dropped, we take exact same values and return to the original spot
+            # the problem is that if we return to the original spot, then the power difference is positive going in that
+            # direction, which then means we're gonna go somewhere that's smaller again, so there's two alternatives that we
+            # should choose instead!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
 
 

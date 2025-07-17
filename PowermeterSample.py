@@ -53,3 +53,5 @@ def get_power_value():
     power = c_double()
     tlPM.measPower(byref(power), TLPM_DEFAULT_CHANNEL)
     return power.value
+
+

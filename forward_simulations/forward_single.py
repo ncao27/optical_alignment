@@ -58,16 +58,19 @@ while yaw1 < yaw1_end:
 
     while yaw2 < yaw2_end:
 
+        # update the yaw of hte second mirror
         core.setOpticalSystemParamByIndexD(9, 10, yaw2)
 
         pitch1 = pitch1_start
 
+        # update the pitch of the first mirror
         while pitch1 < pitch1_end:
 
             core.setOpticalSystemParamByIndexD(6, 11, pitch1)
 
             pitch2 = pitch2_start
 
+            # update the pitch of the second mirror
             while pitch2 < pitch2_end:
 
                 # update the yaw of the second mirror
